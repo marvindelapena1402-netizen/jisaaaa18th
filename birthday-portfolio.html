@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Happy 18th Birthday Jessa Rivera! 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a0a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #7b2cbf 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: #f5d0fe;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(219, 39, 119, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(192, 38, 211, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+            animation: backgroundPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes backgroundPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Animated Background */
+        .confetti {
+            position: fixed;
+            width: 8px;
+            height: 8px;
+            background: #ec4899;
+            position: absolute;
+            animation: fall linear infinite;
+            z-index: 1;
+            border-radius: 2px;
+            box-shadow: 0 0 6px rgba(236, 72, 153, 0.8);
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Header Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 10, 46, 0.85);
+            backdrop-filter: blur(20px);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 1000;
+            box-shadow: 0 2px 30px rgba(236, 72, 153, 0.3), 0 0 60px rgba(219, 39, 119, 0.2);
+            display: none;
+            border-bottom: 1px solid rgba(236, 72, 153, 0.3);
+        }
+
+        .header.active {
+            display: flex;
+            animation: slideDown 0.5s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.3) 0%, rgba(219, 39, 119, 0.3) 100%);
+            color: #f5d0fe;
+            border: 1px solid rgba(236, 72, 153, 0.5);
+            padding: 12px 28px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3), inset 0 0 20px rgba(236, 72, 153, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(236, 72, 153, 0.4);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .nav-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.5), 0 0 30px rgba(219, 39, 119, 0.4);
+            border-color: rgba(236, 72, 153, 0.8);
+        }
+
+        .nav-btn.active {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            box-shadow: 0 4px 20px rgba(236, 72, 153, 0.6), 0 0 40px rgba(219, 39, 119, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.1);
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 4px 20px rgba(236, 72, 153, 0.6), 0 0 40px rgba(219, 39, 119, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.1); }
+            50% { box-shadow: 0 4px 30px rgba(236, 72, 153, 0.8), 0 0 60px rgba(219, 39, 119, 0.6), inset 0 0 30px rgba(255, 255, 255, 0.2); }
+        }
+
+        .nav-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Initial Landing Page */
+        .landing-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .landing-page.hidden {
+            display: none;
+        }
+
+        .birthday-title {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #f5d0fe;
+            text-shadow: 
+                0 0 10px rgba(236, 72, 153, 0.8),
+                0 0 20px rgba(219, 39, 119, 0.6),
+                0 0 30px rgba(192, 38, 211, 0.4),
+                2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            animation: bounce 1.5s ease infinite, titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.02); }
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { 
+                text-shadow: 
+                    0 0 10px rgba(236, 72, 153, 0.8),
+                    0 0 20px rgba(219, 39, 119, 0.6),
+                    0 0 30px rgba(192, 38, 211, 0.4),
+                    2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            50% { 
+                text-shadow: 
+                    0 0 20px rgba(236, 72, 153, 1),
+                    0 0 40px rgba(219, 39, 119, 0.8),
+                    0 0 60px rgba(192, 38, 211, 0.6),
+                    2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .celebrant-name {
+            font-size: 3rem;
+            color: #fbbf24;
+            text-shadow: 
+                0 0 15px rgba(251, 191, 36, 0.9),
+                0 0 30px rgba(245, 158, 11, 0.7),
+                0 0 45px rgba(217, 119, 6, 0.5),
+                2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+            animation: nameGlow 2.5s ease-in-out infinite, float 3s ease-in-out infinite;
+        }
+
+        @keyframes nameGlow {
+            0%, 100% { 
+                text-shadow: 
+                    0 0 15px rgba(251, 191, 36, 0.9),
+                    0 0 30px rgba(245, 158, 11, 0.7),
+                    0 0 45px rgba(217, 119, 6, 0.5),
+                    2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            50% { 
+                text-shadow: 
+                    0 0 25px rgba(251, 191, 36, 1),
+                    0 0 50px rgba(245, 158, 11, 0.9),
+                    0 0 75px rgba(217, 119, 6, 0.7),
+                    2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .celebrant-image {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 6px solid rgba(236, 72, 153, 0.6);
+            box-shadow: 
+                0 0 30px rgba(236, 72, 153, 0.6),
+                0 0 60px rgba(219, 39, 119, 0.4),
+                0 10px 40px rgba(0, 0, 0, 0.4);
+            margin-bottom: 30px;
+            object-fit: cover;
+            animation: pulse 2.5s ease infinite, rotateBorder 8s linear infinite;
+            position: relative;
+        }
+
+        .celebrant-image::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            border-top-color: #ec4899;
+            border-right-color: #db2777;
+            border-bottom-color: #fbbf24;
+            border-left-color: #c084fc;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes rotateBorder {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 30px rgba(236, 72, 153, 0.6),
+                    0 0 60px rgba(219, 39, 119, 0.4),
+                    0 10px 40px rgba(0, 0, 0, 0.4);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 50px rgba(236, 72, 153, 0.9),
+                    0 0 100px rgba(219, 39, 119, 0.6),
+                    0 10px 60px rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        .press-me-btn {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 50%, #c084fc 100%);
+            color: #ffffff;
+            border: 2px solid rgba(236, 72, 153, 0.8);
+            padding: 18px 55px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 
+                0 8px 30px rgba(236, 72, 153, 0.5),
+                0 0 40px rgba(219, 39, 119, 0.3),
+                inset 0 0 20px rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: wiggle 2.5s ease infinite, buttonGlow 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .press-me-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        @keyframes buttonGlow {
+            0%, 100% { 
+                box-shadow: 
+                    0 8px 30px rgba(236, 72, 153, 0.5),
+                    0 0 40px rgba(219, 39, 119, 0.3),
+                    inset 0 0 20px rgba(255, 255, 255, 0.1);
+            }
+            50% { 
+                box-shadow: 
+                    0 8px 40px rgba(236, 72, 153, 0.8),
+                    0 0 60px rgba(219, 39, 119, 0.5),
+                    inset 0 0 30px rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-3deg) scale(1.02); }
+            75% { transform: rotate(3deg) scale(1.02); }
+        }
+
+        .press-me-btn:hover {
+            transform: scale(1.15) translateY(-5px);
+            box-shadow: 
+                0 15px 50px rgba(236, 72, 153, 0.7),
+                0 0 80px rgba(219, 39, 119, 0.5),
+                inset 0 0 40px rgba(255, 255, 255, 0.2);
+            border-color: rgba(236, 72, 153, 1);
+        }
+
+        .press-me-btn:active {
+            transform: scale(1.05) translateY(-2px);
+        }
+
+        /* Welcome Modal */
+        .welcome-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .welcome-modal.active {
+            display: flex;
+        }
+
+        .welcome-content {
+            background: rgba(26, 10, 46, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 50px;
+            border-radius: 30px;
+            text-align: center;
+            max-width: 550px;
+            width: 90%;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 80px rgba(236, 72, 153, 0.3),
+                inset 0 0 40px rgba(236, 72, 153, 0.1);
+            animation: slideIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid rgba(236, 72, 153, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(236, 72, 153, 0.1), transparent);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px) scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .welcome-content h2 {
+            font-size: 2.5rem;
+            color: #f5d0fe;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(236, 72, 153, 0.8);
+            position: relative;
+            z-index: 1;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .welcome-content p {
+            font-size: 1.3rem;
+            color: #f5d0fe;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .proceed-btn {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            color: #ffffff;
+            border: 2px solid rgba(236, 72, 153, 0.8);
+            padding: 15px 45px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 25px rgba(236, 72, 153, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .proceed-btn:hover {
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 10px 35px rgba(236, 72, 153, 0.7), 0 0 50px rgba(219, 39, 119, 0.4), inset 0 0 25px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Content Sections */
+        .content-section {
+            display: none;
+            min-height: 100vh;
+            padding: 100px 20px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            text-align: center;
+            color: #f5d0fe;
+            margin-bottom: 50px;
+            text-shadow: 
+                0 0 15px rgba(236, 72, 153, 0.8),
+                0 0 30px rgba(219, 39, 119, 0.6),
+                2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: titleFloat 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Friends Grid */
+        .friends-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .friend-card {
+            background: rgba(26, 10, 46, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(236, 72, 153, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: 1px solid rgba(236, 72, 153, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: cardFadeIn 0.6s ease backwards;
+        }
+
+        .friend-card:nth-child(1) { animation-delay: 0.1s; }
+        .friend-card:nth-child(2) { animation-delay: 0.2s; }
+        .friend-card:nth-child(3) { animation-delay: 0.3s; }
+        .friend-card:nth-child(4) { animation-delay: 0.4s; }
+        .friend-card:nth-child(5) { animation-delay: 0.5s; }
+        .friend-card:nth-child(n+6) { animation-delay: 0.6s; }
+
+        @keyframes cardFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .friend-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+            transition: transform 0.6s;
+            transform: scale(0);
+        }
+
+        .friend-card:hover::before {
+            transform: scale(1);
+        }
+
+        .friend-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.5),
+                0 0 50px rgba(236, 72, 153, 0.5),
+                0 0 80px rgba(219, 39, 119, 0.3);
+            border-color: rgba(236, 72, 153, 0.6);
+        }
+
+        .friend-image {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 3px solid rgba(236, 72, 153, 0.6);
+            box-shadow: 
+                0 0 20px rgba(236, 72, 153, 0.5),
+                0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .friend-card:hover .friend-image {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 
+                0 0 30px rgba(236, 72, 153, 0.8),
+                0 0 50px rgba(219, 39, 119, 0.5),
+                0 10px 25px rgba(0, 0, 0, 0.4);
+            border-color: rgba(236, 72, 153, 1);
+        }
+
+        .friend-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #f5d0fe;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(236, 72, 153, 0.6);
+            position: relative;
+            z-index: 1;
+        }
+
+        .open-btn {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.4) 0%, rgba(219, 39, 119, 0.4) 100%);
+            color: #f5d0fe;
+            border: 2px solid rgba(236, 72, 153, 0.6);
+            padding: 12px 35px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 15px rgba(236, 72, 153, 0.3), inset 0 0 15px rgba(236, 72, 153, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .open-btn:hover {
+            transform: scale(1.1) translateY(-2px);
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.6), 0 0 40px rgba(219, 39, 119, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.1);
+            border-color: rgba(236, 72, 153, 1);
+        }
+
+        /* Message Modal */
+        .message-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .message-modal.active {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .message-content {
+            background: rgba(26, 10, 46, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 45px;
+            border-radius: 30px;
+            max-width: 750px;
+            max-height: 85vh;
+            width: 90%;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.6),
+                0 0 80px rgba(236, 72, 153, 0.4),
+                inset 0 0 40px rgba(236, 72, 153, 0.1);
+            animation: modalSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow-y: auto;
+            border: 2px solid rgba(236, 72, 153, 0.4);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: scale(0.8) translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .message-content h3 {
+            color: #f5d0fe;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 0 0 20px rgba(236, 72, 153, 0.8);
+        }
+
+        .message-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #f5d0fe;
+            margin-bottom: 25px;
+            text-align: justify;
+            white-space: pre-line;
+        }
+
+        .close-btn {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            color: #ffffff;
+            border: 2px solid rgba(236, 72, 153, 0.8);
+            padding: 12px 35px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            display: block;
+            margin: 20px auto 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .close-btn:hover {
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.7), 0 0 50px rgba(219, 39, 119, 0.4), inset 0 0 25px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Pictures Section */
+        .pictures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .picture-item {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.4),
+                0 0 25px rgba(236, 72, 153, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: 2px solid rgba(236, 72, 153, 0.3);
+            position: relative;
+            animation: pictureFadeIn 0.6s ease backwards;
+        }
+
+        .picture-item:nth-child(1) { animation-delay: 0.05s; }
+        .picture-item:nth-child(2) { animation-delay: 0.1s; }
+        .picture-item:nth-child(3) { animation-delay: 0.15s; }
+        .picture-item:nth-child(4) { animation-delay: 0.2s; }
+        .picture-item:nth-child(5) { animation-delay: 0.25s; }
+        .picture-item:nth-child(n+6) { animation-delay: 0.3s; }
+
+        @keyframes pictureFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .picture-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(236, 72, 153, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .picture-item:hover::after {
+            opacity: 1;
+        }
+
+        .picture-item:hover {
+            transform: scale(1.08) translateY(-10px);
+            box-shadow: 
+                0 20px 50px rgba(0, 0, 0, 0.5),
+                0 0 50px rgba(236, 72, 153, 0.5),
+                0 0 80px rgba(219, 39, 119, 0.3);
+            border-color: rgba(236, 72, 153, 0.8);
+        }
+
+        .picture-item img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .picture-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Picture Lightbox Modal */
+        .picture-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .picture-lightbox.active {
+            display: flex;
+            animation: lightboxFadeIn 0.3s ease;
+        }
+
+        @keyframes lightboxFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: lightboxSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes lightboxSlideIn {
+            from {
+                transform: scale(0.7) translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.8),
+                0 0 80px rgba(236, 72, 153, 0.5);
+            border: 3px solid rgba(236, 72, 153, 0.5);
+        }
+
+        .lightbox-controls {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .lightbox-nav-btn {
+            background: linear-gradient(135deg, rgba(236, 72, 153, 0.4) 0%, rgba(219, 39, 119, 0.4) 100%);
+            color: #f5d0fe;
+            border: 2px solid rgba(236, 72, 153, 0.6);
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 20px rgba(236, 72, 153, 0.4), inset 0 0 15px rgba(236, 72, 153, 0.1);
+        }
+
+        .lightbox-nav-btn:hover {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 8px 30px rgba(236, 72, 153, 0.7), 0 0 50px rgba(219, 39, 119, 0.5), inset 0 0 25px rgba(255, 255, 255, 0.1);
+            border-color: rgba(236, 72, 153, 1);
+        }
+
+        .lightbox-nav-btn:active {
+            transform: scale(1.05) translateY(-1px);
+        }
+
+        .lightbox-back-btn {
+            background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+            color: #ffffff;
+            border: 2px solid rgba(236, 72, 153, 0.8);
+            padding: 15px 40px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 25px rgba(236, 72, 153, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .lightbox-back-btn:hover {
+            transform: scale(1.15) translateY(-5px);
+            box-shadow: 0 10px 40px rgba(236, 72, 153, 0.8), 0 0 60px rgba(219, 39, 119, 0.6), inset 0 0 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-image-counter {
+            color: #f5d0fe;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-shadow: 0 0 15px rgba(236, 72, 153, 0.8);
+            padding: 10px 20px;
+            background: rgba(26, 10, 46, 0.7);
+            border-radius: 20px;
+            border: 1px solid rgba(236, 72, 153, 0.4);
+        }
+
+        /* 18th Page */
+        .eighteenth-content {
+            background: rgba(26, 10, 46, 0.8);
+            backdrop-filter: blur(15px);
+            border-radius: 30px;
+            padding: 60px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 80px rgba(236, 72, 153, 0.3),
+                inset 0 0 40px rgba(236, 72, 153, 0.1);
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto;
+            border: 2px solid rgba(236, 72, 153, 0.4);
+            animation: contentFadeIn 0.8s ease;
+        }
+
+        @keyframes contentFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .eighteenth-content h2 {
+            font-size: 2.8rem;
+            color: #f5d0fe;
+            margin-bottom: 35px;
+            text-shadow: 0 0 20px rgba(236, 72, 153, 0.8);
+        }
+
+        .eighteenth-content p {
+            font-size: 1.25rem;
+            line-height: 2;
+            color: #f5d0fe;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        /* Emoji animations */
+        .emoji {
+            font-size: 2rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @media (max-width: 768px) {
+            .birthday-title {
+                font-size: 2.5rem;
+            }
+            .celebrant-name {
+                font-size: 2rem;
+            }
+            .celebrant-image {
+                width: 180px;
+                height: 180px;
+            }
+            .press-me-btn {
+                padding: 15px 40px;
+                font-size: 1.2rem;
+            }
+            .friends-grid {
+                grid-template-columns: 1fr;
+            }
+            .pictures-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+            }
+            .picture-item img {
+                height: 250px;
+            }
+            .header {
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 10px 15px;
+            }
+            .nav-btn {
+                padding: 10px 18px;
+                font-size: 14px;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .welcome-content {
+                padding: 30px;
+            }
+            .welcome-content h2 {
+                font-size: 1.8rem;
+            }
+            .message-content {
+                padding: 30px;
+                max-height: 90vh;
+            }
+            .message-content h3 {
+                font-size: 1.5rem;
+            }
+            .message-content p {
+                font-size: 1rem;
+            }
+            .eighteenth-content {
+                padding: 30px;
+            }
+            .eighteenth-content h2 {
+                font-size: 2rem;
+            }
+            .eighteenth-content p {
+                font-size: 1.1rem;
+            }
+            .lightbox-content {
+                max-width: 95%;
+            }
+            .lightbox-image {
+                max-height: 70vh;
+            }
+            .lightbox-controls {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .lightbox-nav-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            .lightbox-back-btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Confetti Animation -->
+    <div id="confetti-container"></div>
+
+    <!-- Header Navigation -->
+    <div class="header" id="header">
+        <button class="nav-btn" onclick="showSection('home')"><span>🏠 Home</span></button>
+        <button class="nav-btn" onclick="showSection('pictures')"><span>📸 Pictures</span></button>
+        <button class="nav-btn" onclick="showSection('eighteenth')"><span>🎂 18th</span></button>
+    </div>
+
+    <!-- Landing Page -->
+    <div class="landing-page" id="landingPage">
+        <h1 class="birthday-title">🎉 HAPPY 18TH BIRTHDAY! 🎉</h1>
+        <h2 class="celebrant-name">Jessa Rivera</h2>
+        <img src="jissa.jpg" alt="Jessa Rivera" class="celebrant-image" id="celebrantImg">
+        <button class="press-me-btn" onclick="pressMe()">🎁 Press Me!</button>
+    </div>
+
+    <!-- Welcome Modal -->
+    <div class="welcome-modal" id="welcomeModal">
+        <div class="welcome-content">
+            <h2>🎉 Surprise! 🎉</h2>
+            <p>This is for you!! Enjoy your day!! 🎂🎈🎊</p>
+            <button class="proceed-btn" onclick="proceedToHome()">Proceed</button>
+        </div>
+    </div>
+
+    <!-- Home Section -->
+    <div class="content-section" id="homeSection">
+        <h1 class="section-title">💌 Messages from Friends 💌</h1>
+        <div class="friends-grid" id="friendsGrid">
+            <!-- Friends will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Pictures Section -->
+    <div class="content-section" id="picturesSection">
+        <h1 class="section-title">📸 Picture Gallery 📸</h1>
+        <div class="pictures-grid" id="picturesGrid">
+            <!-- Pictures will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- 18th Page Section -->
+    <div class="content-section" id="eighteenthSection">
+        <div class="eighteenth-content">
+            <h2>🎂 Happy 18th Birthday, Jessa! 🎂</h2>
+            <p>
+                Dear Jessa,
+            </p>
+            <p>
+                As we celebrate this special milestone of your 18th birthday, we want to take a moment to express our heartfelt gratitude and appreciation for the wonderful person you are. You have been an amazing friend and classmate, and we are so grateful to have shared this journey with you.
+            </p>
+            <p>
+                As we all go our separate ways and embark on new adventures, we want to wish you the very best of luck in all your future endeavors. May your path be filled with success, happiness, and endless opportunities. Remember that even though we may be parting ways, the memories we've created together will always remain in our hearts.
+            </p>
+            <p>
+                Thank you for being such an incredible friend. We wish you nothing but the best as you step into this new chapter of your life. May you continue to grow, learn, and achieve all your dreams.
+            </p>
+            <p>
+                Good luck on your next journey, Jessa! You've got this! 🌟
+            </p>
+            <p style="margin-top: 30px; font-weight: bold; font-size: 1.3rem;">
+                With lots of love,<br>
+                Your Friends 💝
+            </p>
+        </div>
+    </div>
+
+    <!-- Message Modal -->
+    <div class="message-modal" id="messageModal">
+        <div class="message-content">
+            <h3 id="messageFriendName"></h3>
+            <p id="messageText"></p>
+            <button class="close-btn" onclick="closeMessage()">Close</button>
+        </div>
+    </div>
+
+    <!-- Picture Lightbox Modal -->
+    <div class="picture-lightbox" id="pictureLightbox" onclick="if(event.target.id === 'pictureLightbox') closePictureLightbox()">
+        <div class="lightbox-content" onclick="event.stopPropagation()">
+            <img src="" alt="Memory" class="lightbox-image" id="lightboxImage">
+            <div class="lightbox-controls">
+                <button class="lightbox-nav-btn" onclick="previousPicture()">◄ Previous</button>
+                <span class="lightbox-image-counter" id="imageCounter">1 / 1</span>
+                <button class="lightbox-nav-btn" onclick="nextPicture()">Next ►</button>
+            </div>
+            <button class="lightbox-back-btn" onclick="closePictureLightbox()" style="margin-top: 20px;">Back to Gallery</button>
+        </div>
+    </div>
+
+    <script>
+        // Friends data with messages
+        const friends = [
+            {
+                name: "Pearl Anne De Guzman",
+                message: "HAPPIEST BLESSED 18TH BIRTHDAY, JESSA 🥳💖🥳 thank you for being one of the consistent people i know 🫶🏻 the efforts you made, the messages you sent, the pangangamusta, and so on—signs that we are truly lucky and blessed 🌻 you're one of a kind ❤️‍🩹  thank you for being brave enough to fight, for being kind to everyone, and for understanding 💐 thank you for taking a risk sa mga bagay na sa una'y walang kasiguraduhan 💕 may life continues to bring you happiness and positivity 🎉 keep shining, loves 🌟 God works in His mysterious ways, balang araw darating din ang mga bagay na para sa'yo, ang mga panalangin mo 💫 God will lead you there 💞 may you embrace this year gently, with humility and God 🫀 may God blesses you with abundant experiences and memories, success, endless blessings that you genuinely deserve and prayed for ✨ we're always be here for you—to support, cheer, believe, damayan, care. and everything (name it all) ♾️ WELCOME TO LEGALITY, ATIIIII 🫂 looooveeeeaaaalooootss, always in all ways 🤍💋🤍",
+                image: "pearl.jpg"
+            },
+            {
+                name: "Jynarich De Guzman",
+                message: "HAPPY BIRTHDAY, JISOOOO!\n\nThank you for being that one person who never left my side, from grade 1 hanggang ngayon na 18 na tayo. Thank you for every moment, every comfort, and every hug. Always remember that I'm here for you, like a sister who'll never let you go. You mean so much to me, and I can't imagine my life without you. LOVEYOUSOOOOMUCH! 💋🫂🤍",
+                image: "jyna.jpg"
+            },
+            {
+                name: "Daphne Buada",
+                message: "My life would be so empty without you in it. 6 years——6 years of love, trust and care. Jessa, first of all, I love you so much. Hindi ka lang kaibigan para sa akin, you're my sister, actually ikaw nga ang first spouse ko given 'yung nickname natin sa convooooooo.\n\nAlam mo everytime your name visits my mind, I always believe that you are one of the ultimate gifts I received from God——the one I prayed for when I was young. Jessa, you witnessed and loved every version of me and so am I to you. Mahal na mahal kita at alam ko kahit hindi tayo nakakapag-usap masyado, the love we have for each other remains unconditional. Akalain mo iyon? Iyong simpleng ayaan ng street food naging panghabang buhay na pagmamahal na. Every bite natin sa  hotdog sandwich ng 7/11 naalala ko pa at chismissan after class. We basically grew up with each other nooo. Yung pagpunta natin sa tabing ilog at sa hanging bridge. Lalo na iyong nagbeach tayooo, ang sayaaa.\n\nLove, you are such a great listener and you are also one of the most loyal friend I ever had and I am forever grateful that God blessed me with someone as precious as you. Happy happy 18th birthday, my loveeeee. Habang-buhay kong pipiliing maging kaibigan ka kahit ano pang misunderstanding and miscommunication ang mangyari between us, palaging mananaig ang pagmamahal ko sa 'yo. You are truly a blessing to my life kung alam niyo lang paano niyo ako iniligtas ni Cyril noong lugmok na lugmok ako at noong panahon na akala ko wala ng nagmamahal sa akin.\n\nJessa, I am ready to witness more versions of you, kahit maging ano ka paaa, I will always be your best friend. Happy Legality, mahal ko. I am always on your side. Kahit magkamali ka man, hinding-hindi mawawala ang pagkakaibigan natin. I will spend my entire life loving you! Habang buhay na kitang kaibigan at wala ka ng magagawa. Magbago man tayo, madapa, alam kong mahal pa rin natin ang isa't isa. Thank you for making my life colorful.\n\nThank you Lord for the existence of this wonderful person. I know adulthood is hard but always remember that I will always be here for you kahit sa hardest of hardests pa 'yan. Happy birthday, loveeeee! To more years with youuuu!🩷\n\n-Daphne🩷",
+                image: "daphne.jpg"
+            },
+            {
+                name: "Cyril Kate Aquino",
+                message: "HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY\n\n18TH BIRTHDAY JESS!!!!!!!!!!!!!!!\n\nAS YOU STEP INTO THIS NEW JOURNEY, EMBRACE EVERY MOMENT.\n\nWE'VE ALREADY KNOWN EACH OTHER SINCE WE WE'RE IN ELEMENTARY, WE BECAME FRIENDS IN JUNIOR HIGH UP UNTIL NOW AND UNTIL OUR LAST BREATH TAYO PARIN ANG MAGKAKASAMA, TAYO PARIN ANG MATATAG AT HINDI KAILANMAN MATITIBAG, SO IF EVER NA MAY MALIIT NA TAMPUHAN SABIHIN MO LANG SA AMIN BECAUSE YOU KNOW NAMAN NA MAIINTINDIHAN KA NAMIN. IKAW ANG NAGIGING TAKBUHAN NAMIN IF WE NEED COMFORT KASI ALAM NA ALAM MO TALAGA KUNG PAANO MO MAPAPAGAAN ANG LOOB NAMIN. AND SANA MA-I-APPLY MO RIN YUN SA SARILI MO. ALWAYS TAKE CARE. GOD IS ALWAYS WITH U AT HINDING-HINDI KA NYA PABABAYAAN. AGAIN, HAPPY BIRTHDAY!!! WE ALWAYS LOVE YOU MUCH!!!!!!!😘😘CORNY NG MESSAGE KO NOH? 🤣HAYAAN MO NA MINSAN LANG AKO GANTO. I MIGHT SOUND CORNY PERO ALAM MO NAMAN HOW MUCH YOU MEAN TO ME. NOW THAT YOU'RE OF LEGAL AGE, YOU HAVE THE FREEDOM TO MAKE YOUR OWN DECISIONS AND CHOICES. CHASE YOUR DREAMS AND FOLLOW YOUR HEART. MY FUTURE CO-ARCHI!!!!!!!!!!! (GAGAWA RIN TAYO NG SARILI NATING ARCHITECTURAL FIRM MAG-CO-COLLAB TAYO NILA KUYAS😋😋)\n\nHAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY HAPPY",
+                image: "cyril1.jpg"
+            },
+            {
+                name: "Marvin Dela Pena",
+                message: "Happy 18th Birthday Jessa mae!! you're now in legal age!! ang layo na ng narating mo and tayo nung naging magkaklase tayo since elem until now! nagkukulitan pa tayo siyempre diko malilimutan yong carnival natin nung grade 6 sa upuan HAHAH and now wowww you're fully grown na. im so thankful sayo dahil anjan ka para saakin nung time na nag oopen ako sayo about doon sa ex ko hanggang sa ma bringout ko sa parents ko about doon and you i still see your message \"okay lang marvin ilabas mo lang yan mawawala rin yan, kapit lang.\",\"alam kong umiiyak ka ngayon, tahan na marvin ha kayanin mo andito kami para sayo!\" this really makes me cry nung nangyari to kasi anjan ka para saaakinn hindi ko expect na ohhh im so glad that this person exist in my life the person that can you rant on, tell your problems and have some advices on. im so thankful sa time na yon kasi anjan ka talaga para saakin also sa cof natin even tho na may unting tampohan still buo pa rin tayo. maraming maraming salamat dahil anjan ka para saamin hindi kami nagsisisi na makilala ka. kaming mga group of friends mo andito lagi para sayo, mahal na mahal ka namin jessa no matter what happen. kung ikaw ang sandalan namin kami rin ang iyog sandalan. proprotektahan at sasamahan sa lahat even at your lowest no worries anjan kami para sayo to cheer up!! and now you're 18 goodluck to your next journey goodluck saating mag kakaibigan. last highschool na natin to kaya't sulitin na natin at mag sama sama. goodluck din sa college at tayo'y makakapag tapos ng sabay sabay!! walang iwanan dahil tayo parin ay magsasama sama. siyempre and pinakaimportante sa lahat ay mag ingat ka more birthday to come and ALWAYS PRAY TO GOD and thank him every single day because God is Good All The Time!!. yon lang ang masasabi ko and you know the rest!! mwaa loveeyouuu bebe koo!!! aral ng mabuti haaa mwa mwa mwa!!!\n\nlovelots-MarvinDp",
+                image: "marvin.jpg"
+            },
+            {
+                name: "Rhona Aquino",
+                message: "Hi, Jessa! I couldn't really say much (currently rushing my DOST Application that you guided me through), thank you for being a good-caring  friend na laging nandiyan whenever I need help and feeling down. Of course our friendship isn't perfect, may mga times na we become unbearable with each other, pero I'm super grateful na nandiyan ka pa rin sa kabila ng lahat. I couldn't imagine kapag college na tayo ay malayo na tayo sa isa't isa, ang hirap tanggapin that we're growing up—and it hurts thinking about the idea na hindi na tayo araw-araw makakapagkulitan. Thank you for always listening and giving advice... All those deep talks made me realize a lot of things, I admire the way you explain and confront things—you're the bravest friend I have. I wish you the happiest birthday today and on every birthday you will encounter. I'm always here para samahan ka sa kahit ano and I hope that you will find what your heart is really looking for.\n\nLuvlots, Rhona ❤️",
+                image: "rhona.jpg"
+            },
+            {
+                name: "Lecian Arenajo",
+                message: "HAPPY 18TH, ATE JESS!!\n\nWag mong kalilimutang andito lang ako/kami ni thea palagi. Hinding hindi magiging hadlang kung anong meron samin sa pagkakaibigan natin, alam mo yan. Here lang din ako palagi kapag tinalikuran ka nilang lahat omki? (grrr) I know hindi na  kami ang una mong masasabihan ng problems mo pero syempre willing pa rin kami makinig sayo. Wala rin akong balak sapawan sila alam ko/namin naman kung hanggang saan lang kami. Wag kang mahihiyang iapproach ako anytime. Sorry rin sa mga tampuhan dati which is masaya ako na hindi na sya naulit pa and sana magtuloy tuloy pa. Sana kahit hindi na tayo magkasama sa iisang school next year eh hindi pa mawawala yung connection natin (Guibel pareho oh).\n\nAgain, HAPPY HAPPY BIRTHDAY ATE JESS!! WE LABUYOO!!",
+                image: "lecian.jpg"
+            },
+            {
+                name: "Althea Tamayo",
+                message: "HAPPY 18TH BIRTHDAY, JISAABELLS!!\n\nI genuinely wish you true and lasting happiness, kasi i know na deserve na deserve mo yan. I hope and pray that all your dreams and plans will beautifully align with God's plan. ❤️\n\nI'm very much happy and thankful na we have someone na sobrang ligalig, na para bang motolite ang brand ng battery😭 Your energy, your presence, and your kulit make everything brighter.\n\nI'll forever cherish the memories we've created—good or bad—because I know those moments shaped the friendship we have today. No words can fully express how thankful I am that we have you. Palagi mong tatandaan na we're here lagi't lagi ❤️ for better or for worse, na para bang ikakasal ka ngayon talaga. 😭😭\n\nEnjoy your special day. Again, HAPPY 18TH BIRTHDAY, PYRAMID OF JIZAA!! ❤️",
+                image: "althea.jpg"
+            },
+            {
+                name: "Juliane Loraine Flores",
+                message: "happiest birthday, jessa!! you know the rest 😝😘☝️😊💗♥️🩷🎀🥰",
+                image: "juliane.jpg"
+            },
+            {
+                name: "Terence Philip Gabion",
+                message: "Sure! Here is the revised version of your birthday message. It is more humanized, beautiful, and warm just like what you said.\n\nHappy birthday, Jessusamaejoymarie IV 🥰, this message is quite short but I hope this will mean a lot to you.\n\nThank you for being a great friend to me and for always having our backs whenever there are problems happening. Thank you for supporting our friend group even when the unprecedented struck.\n\nYou were a radiant beam for everyone who knows you well. Today, you'll celebrate one of the most important birthdays of your life. The day you'll step into adulthood. All I wish for you is to be what you've always dreamed of. You know the rest. Happy birthday!\n\nDo you want me to add more deep words or make it longer please let me know.",
+                image: "terence.jpg"
+            },
+        
+        ];
+
+        // Sample pictures (placeholder URLs - replace with actual images)
+        const pictures = [
+            "cyril.jpg",
+            "m1.jpg",
+            "m2.jpg",
+            "m3.jpg",
+            "m4.jpg",
+            "m5.jpg",
+            "m6.jpg",
+            "m7.jpg",
+            "m8.jpg",
+            "m9.jpg",
+            "m10.jpg",
+            "m11.jpg",
+            "m12.jpg",
+            "m13.jpg",
+            "m14.jpg",
+            "m15.jpg",
+            "m16.jpg",
+            "m17.jpg",
+            "m18.jpg",
+            "m19.jpg",
+            "m20.jpg",
+            "m21.jpg",
+            "m22.jpg",
+            "m23.jpg",
+            "m24.jpg",
+            "m25.jpg",
+            "m26.jpg",
+            "m27.jpg",
+            "m28.jpg",
+            "m29.jpg",
+            "m30.jpg",
+            "m31.jpg",
+            "m32.jpg",
+            "m33.jpg",
+            "m34.jpg",
+            "m35.jpg",
+            "m36.jpg",
+            "m37.jpg",
+            "m38.jpg",
+            "m39.jpg",
+            "m40.jpg",
+            "m41.jpg",
+            "m42.jpg",
+            "m43.jpg",
+            "m44.jpg",
+            "m45.jpg",
+            "m46.jpg",
+            "m47.jpg",
+"m48.jpg",
+"m49.jpg",
+"m50.jpg",
+"m51.jpg",
+"m52.jpg",
+"m53.jpg",
+"m54.jpg",
+"m55.jpg",
+"m56.jpg",
+"m57.jpg",
+"m58.jpg",
+"m59.jpg",
+"m60.jpg",
+"m61.jpg",
+"m62.jpg",
+"m63.jpg",
+"m64.jpg",
+"m65.jpg",
+"m66.jpg",
+"m67.jpg",
+"m68.jpg",
+"m69.jpg",
+"m70.jpg"
+        ];
+
+        // Create confetti
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#ec4899', '#db2777', '#f472b6', '#fbbf24', '#c084fc', '#a855f7', '#e879f9', '#f43f5e'];
+            
+            for (let i = 0; i < 60; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = Math.random() * -100 + 'px';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                confetti.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                confetti.style.width = (Math.random() * 8 + 6) + 'px';
+                confetti.style.height = confetti.style.width;
+                container.appendChild(confetti);
+            }
+        }
+
+        // Press Me Button
+        function pressMe() {
+            document.getElementById('welcomeModal').classList.add('active');
+        }
+
+        // Proceed to Home
+        function proceedToHome() {
+            document.getElementById('welcomeModal').classList.remove('active');
+            document.getElementById('landingPage').classList.add('hidden');
+            document.getElementById('header').classList.add('active');
+            // Remove active from all nav buttons first
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            // Add active to Home section and button
+            document.getElementById('homeSection').classList.add('active');
+            document.querySelectorAll('.nav-btn')[0].classList.add('active');
+            createConfetti();
+        }
+
+        // Show Section
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+            
+            // Remove active class from all nav buttons
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected section
+            if (section === 'home') {
+                document.getElementById('homeSection').classList.add('active');
+                document.querySelectorAll('.nav-btn')[0].classList.add('active');
+            } else if (section === 'pictures') {
+                document.getElementById('picturesSection').classList.add('active');
+                document.querySelectorAll('.nav-btn')[1].classList.add('active');
+            } else if (section === 'eighteenth') {
+                document.getElementById('eighteenthSection').classList.add('active');
+                document.querySelectorAll('.nav-btn')[2].classList.add('active');
+            }
+        }
+
+        // Display Friends
+        function displayFriends() {
+            const grid = document.getElementById('friendsGrid');
+            friends.forEach((friend, index) => {
+                const card = document.createElement('div');
+                card.className = 'friend-card';
+                card.innerHTML = `
+                    <img src="${friend.image}" alt="${friend.name}" class="friend-image">
+                    <div class="friend-name">${friend.name}</div>
+                    <button class="open-btn" onclick="openFriendMessage(${index})">Open</button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Open friend message by index
+        function openFriendMessage(index) {
+            const friend = friends[index];
+            openMessage(friend.name, friend.message);
+        }
+
+        // Display Pictures
+        function displayPictures() {
+            const grid = document.getElementById('picturesGrid');
+            pictures.forEach((pic, index) => {
+                const item = document.createElement('div');
+                item.className = 'picture-item';
+                item.innerHTML = `<img src="${pic}" alt="Memory">`;
+                item.onclick = () => openPictureLightbox(index);
+                grid.appendChild(item);
+            });
+        }
+
+        // Open Picture Lightbox
+        let currentPictureIndex = 0;
+
+        function openPictureLightbox(index) {
+            currentPictureIndex = index;
+            updateLightboxImage();
+            document.getElementById('pictureLightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close Picture Lightbox
+        function closePictureLightbox() {
+            document.getElementById('pictureLightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Update Lightbox Image
+        function updateLightboxImage() {
+            const lightboxImage = document.getElementById('lightboxImage');
+            const imageCounter = document.getElementById('imageCounter');
+            lightboxImage.src = pictures[currentPictureIndex];
+            imageCounter.textContent = `${currentPictureIndex + 1} / ${pictures.length}`;
+            
+            // Reset animation
+            lightboxImage.style.animation = 'none';
+            setTimeout(() => {
+                lightboxImage.style.animation = 'lightboxSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            }, 10);
+        }
+
+        // Navigate to previous picture
+        function previousPicture() {
+            currentPictureIndex = (currentPictureIndex - 1 + pictures.length) % pictures.length;
+            updateLightboxImage();
+        }
+
+        // Navigate to next picture
+        function nextPicture() {
+            currentPictureIndex = (currentPictureIndex + 1) % pictures.length;
+            updateLightboxImage();
+        }
+
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', (e) => {
+            const lightbox = document.getElementById('pictureLightbox');
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    closePictureLightbox();
+                } else if (e.key === 'ArrowLeft') {
+                    previousPicture();
+                } else if (e.key === 'ArrowRight') {
+                    nextPicture();
+                }
+            }
+        });
+
+        // Open Message
+        function openMessage(name, message) {
+            document.getElementById('messageFriendName').textContent = name;
+            document.getElementById('messageText').textContent = message;
+            document.getElementById('messageModal').classList.add('active');
+        }
+
+        // Close Message
+        function closeMessage() {
+            document.getElementById('messageModal').classList.remove('active');
+        }
+
+        // Initialize
+        window.addEventListener('load', () => {
+            displayFriends();
+            displayPictures();
+            createConfetti();
+        });
+    </script>
+</body>
+</html>
